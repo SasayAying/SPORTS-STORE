@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Product Catalog";
+}
+<h2>Product Catalog</h2>
+<div class="row">
+    @foreach (var p in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="@p.Image" class="card-img-top" alt="@p.Name" />
+                <div class="card-body">
+                    <h5 class="card-title">@p.Name</h5>
+                    <p class="card-text">@p.Description</p>
+                    <p class="card-text fw-bold">$@p.Price</p>
+                    <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                        <input type="hidden" name="productId" value="@p.Id" />
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>
