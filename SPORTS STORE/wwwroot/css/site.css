@@ -1,22 +1,221 @@
-html {
-  font-size: 14px;
-}
+/* === Nike Store Theme CSS === */
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Global styles */
 body {
-  margin-bottom: 60px;
+    background-color: #f7f7f7; /* Light gray background */
+    color: #111; /* Almost black text */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* Nike-inspired color palette */
+:root {
+    --nike-black: #111111;
+    --nike-white: #ffffff;
+    --nike-gray: #f7f7f7;
+    --nike-orange: #ff6b00;
+    --nike-green: #00a86b;
+    --nike-blue: #0056d6;
+    --nike-red: #e41f25;
+}
+
+/* Navbar - Clean black navbar like Nike.com */
+.navbar, .bg-dark {
+    background-color: var(--nike-black) !important;
+    color: var(--nike-white) !important;
+    padding: 15px 0;
+    border-bottom: none;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--nike-white) !important;
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+}
+
+.navbar a, .navbar-text {
+    color: var(--nike-white) !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+    .navbar a:hover {
+        color: #ccc !important;
+    }
+
+/* Headings - Bold and impactful */
+.retro-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--nike-black);
+    text-align: center;
+    margin: 40px 0 30px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* Buttons - Nike's bold, simple button style */
+.btn, .retro-btn {
+    background-color: var(--nike-black);
+    color: var(--nike-white) !important;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+    .btn:hover, .retro-btn:hover {
+        background-color: #333;
+        color: var(--nike-white) !important;
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+/* Accent buttons */
+.retro-btn-remove {
+    background-color: var(--nike-red);
+}
+
+    .retro-btn-remove:hover {
+        background-color: #c2181e;
+    }
+
+/* Cards - Clean product card style */
+.card {
+    border: none;
+    background-color: var(--nike-white);
+    margin-bottom: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card-img-top {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Badges - For sales/new items */
+.badge {
+    background-color: var(--nike-orange);
+    color: var(--nike-white);
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Forms - Clean Nike-style inputs */
+.form-control {
+    border: 1px solid #ddd;
+    background-color: var(--nike-white);
+    color: var(--nike-black);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+    .form-control:focus {
+        border-color: var(--nike-black);
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    }
+
+/* Tables - Clean and minimal */
+.retro-table {
+    width: 100%;
+    background-color: var(--nike-white);
+    color: var(--nike-black);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+}
+
+.retro-th, .retro-td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.retro-th {
+    background-color: var(--nike-gray);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+/* Table footer total */
+tfoot .retro-th {
+    background-color: var(--nike-black);
+    color: var(--nike-white);
+}
+
+/* Utility classes */
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Nike-style sale banner */
+.sale-banner {
+    background-color: var(--nike-red);
+    color: var(--nike-white);
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* Product price styling */
+.product-price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--nike-black);
+}
+
+.sale-price {
+    color: var(--nike-red);
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1rem;
+    margin-left: 8px;
 }
